@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        html, body {
+            background-image: url('images/bg4.jpg');;
+            background-size: cover;
+            margin: 0;
+            height: 100%;
+
+        }
+        /* Sticky Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 86, 179, 0.9);
+            padding: 10px 0;
+            z-index: 1000;
+            
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff5441; /* Highlight color */
+        }
+
+        /* Ensure sections have some spacing to prevent overlap */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+        }
+
+        /* Smooth scrolling effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.btn-primary, .btn-secondary {
+    width: 48%;
+    background-color: #4d4d4d;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+.col-md-3, .row{
+    margin-top: 70px;
+}
+
+.about1, .dezine { 
+  margin-bottom: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;    
+  color: #0056b3;
+  font-size: 2.5rem;
+}
+
+.text{
+    color: white;
+    font-size: 0.9rem;
+}
+
+#skills {
+    background-color: #f8f9fa; 
+
+}
+
+.child {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #222;
+    padding: 60px 0;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 70px;
+}
+
+/* Contact Items */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.contact-item img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Social Media Icons */
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.social-link img {
+    width: 50px;
+    height: 50px;
+    background-color: #0056b3;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-link img:hover {
+    background-color: #d04028;
+}
+
+.social-link p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.social-link p:hover {
+    color: #d04028;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+/* Newsletter Subscription */
+.newsletter h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #d04028;
+}
+
+/* About Section Styling */
+.about-section {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Text Styling */
+.about-text {
+    max-width: 50%;
+    color: white;
+}
+
+.greeting {
+    color: #e74c3c;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 42px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.separator {
+    width: 200px;
+    height: 4px;
+    background-color: #f8cb02;
+    margin: 15px 0;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.description {
+  /* font-size: 48px; */
+  font-weight: bold;
+  position: relative;
+}
+
+/* Resume Button */
+.resume-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #d04028;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.copy{
+    color: #0056b3;
+}
+
+    </style>
+</head>
+  <body>
+ <!-- Sticky Navigation Bar -->
+ <nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+        
+            <section id="about" class="about-section">
+                <div class="about-container">
+                    <div class="about-image">
+                        <img
+          src="images/about/profile.png"
+          alt="Profile Picture"          
+          
+          height="450"
+          style="background-color: rgb(240, 240, 240, 0.8); border-radius: 0.8rem; 
+          margin-bottom: 30px; border: 2px solid #e74c3c;"
+         />
+                    </div>
+                    <div class="about-text">
+                        <h2 class="greeting">HI THERE!</h2>
+                        <h1 class="name">I'M ABRAHAM JUDAH</h1>
+                        <hr class="separator">
+                        <p class="description">
+                            I’m a Data Analyst with 2+ years of experience in uncovering insights 
+                            and driving data-informed decisions. I specialize in Excel, SQL, Power BI, 
+                            and Data Storytelling, transforming raw data into meaningful reports and 
+                            dashboards.
+                            With a strong analytical mindset and attention to detail, I help businesses
+                            optimize processes, identify trends, and make data-driven decisions. 
+                            Explore my portfolio to see how I turn data into actionable insights!
+                        </p>
+                        <a href="data_resume.pdf" class="resume-btn" download>View Resume</a>
+                    </div>
+                    
+                </div>
+            </section>
+            
+<section id="projects" class="py-5 bg-light">
+      <div class="container">
+          <h2 class="text-center mb-4 dezine">Projects</h2>
+          <div class="row"> 
+              <!-- Project 1 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                  <div class="card">
+                      <img src="images/projects/healthcare.jpg" class="card-img-top" alt="Project 1">
+                      <div class="card-body">
+                          <h5 class="card-title">Project 1</h5>
+                          <p class="card-text">Healthcare Analysis: Optimizing Patient Care and Revenue Through Excel Analytics</p>
+                          <div class="d-flex justify-content-between">
+                              <a href="https://medium.com/@chigozirimabraham" class="btn btn-primary">Blog Post</a>
+                              <a href="https://github.com/Chigozky?tab=projects" class="btn btn-secondary">Source Code</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Project 2 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                  <div class="card">
+                      <img src="images/projects/covid.png" class="card-img-top" alt="Project 2">
+                      <div class="card-body">
+                          <h5 class="card-title">Project 2</h5>
+                          <p class="card-text">COVID-19 Analysis: Tracking Cases, Recoveries, and Healthcare Impact</p>
+                          <div class="d-flex justify-content-between">
+                              <a href="https://medium.com/@chigozirimabraham" class="btn btn-primary">Blog Post</a>
+                              <a href="https://github.com/Chigozky?tab=projects" class="btn btn-secondary">Source Code</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Project 3 -->
+              <div class="col-md-6 col-lg-4 mb-4">
+                  <div class="card">
+                      <img src="images/projects/ecommerce.jpeg" class="card-img-top" alt="Project 3">
+                      <div class="card-body">
+                          <h5 class="card-title">Project 3</h5>
+                          <p class="card-text">
+                            E-commerce Analysis: Analyzing Sales, Customer Trends, and Revenue Insights</p>
+                          <div class="d-flex justify-content-between">
+                              <a href="https://medium.com/@chigozirimabraham" class="btn btn-primary">Blog Post</a>
+                              <a href="https://github.com/Chigozky?tab=projects" class="btn btn-secondary">Source Code</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+    <section id="skills" class="text-center my-5 py-5" >
+    <h2 class="fw-bold dezine">Skills</h2>
+    <div class="child">
+        <!-- Skill 1 -->
+        <div class="col-md-3">
+            <div class="d-flex flex-column align-items-center">
+                <img src="images/skills/excel.jpeg" alt="Python" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5 class="fw-bold">Excel</h5>
+                <p>
+                    Proficient in data manipulation, analysis, and automation
+                    using advanced formulas, pivot tables, and VBA to streamline workflows.
+                </p>
+            </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="col-md-3">
+            <div class="d-flex flex-column align-items-center">
+                <img src="images/skills/bi.png" alt="Data Visualization" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5 class="fw-bold">Power BI</h5>
+                <p>
+                    Skilled in creating interactive dashboards and reports, transforming
+                    raw data into insightful visualizations for better decision-making.
+                </p> 
+            </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="col-md-3">
+            <div class="d-flex flex-column align-items-center">
+                <img src="images/skills/model.png" alt="SQL" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5 class="fw-bold">Data Modelling</h5>
+                <p>
+                    Experienced in structuring and optimizing datasets for efficient 
+                    analysis, ensuring accuracy and performance in data-driven solutions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="col-md-3">
+            <div class="d-flex flex-column align-items-center">
+                <img src="images/skills/viz.png" alt="Data Storytelling" class="img-fluid mb-3" style="max-width: 100px;">
+                <h5 class="fw-bold">Data Storytelling</h5>
+                <p>
+                    Adept at translating complex data into compelling narratives 
+                    using visualizations and insights that drive strategic actions.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="text-center text-white py-5">
+    <div class="container">
+        <h2 class="about1">Contact Me</h2>
+
+        <!-- Email & Phone -->
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 my-3">
+            <div class="contact-item">
+                <img src="images/contact/mail.png" alt="Email">
+                <span>chigozirimabraham@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <img src="images/contact/phone.png" alt="Phone">
+                <span>08148515059</span>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-3 col-md-2 col-lg-1">
+                <a href="#" class="social-link">
+                    <img src="images/contact/linkedin.png" alt="LinkedIn">
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1">
+                <a href="#" class="social-link">
+                    <img src="images/contact/twitter.png" alt="Twitter">
+                    <p>Twitter</p>
+                </a>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1">
+                <a href="#" class="social-link">
+                    <img src="images/contact/github.png" alt="GitHub">
+                    <p>GitHub</p>
+                </a>
+            </div>
+            <div class="col-3 col-md-2 col-lg-1">
+                <a href="#" class="social-link">
+                    <img src="images/contact/medium.png" alt="Medium">
+                    <p>Medium</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Newsletter Form -->
+        <div class="newsletter mt-5">
+            <h3>Subscribe to our Newsletter</h3>
+            <form action="#" method="post" class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+  </body>
+
+  <footer class="text-center text-white py-4" style="background-color: black;">
+    <div class="container">
+        <p class="copy">&copy; 2025 All rights reserved.</p>
+    </div>
+   <!-- Bootstrap JS (for navbar toggling on mobile) -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</html> 
+
+
+
+
